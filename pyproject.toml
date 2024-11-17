@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "flask-zero"
+version = "0.1.0"
+description = ""
+authors = ["Evandro Paulo Folletto <evandrofolletto@gmail.com>"]
+readme = "README.md"
+packages = [{include = "flask_zero"}]
+
+[tool.poetry.dependencies]
+python = "^3.12.4"
+flask = "^3.0.3"
+python-dotenv = "^1.0.1"
+psycopg2 = "^2.9.10"
+flask-sqlalchemy = "^3.1.1"
+alembic = "^1.13.3"
+flask-jwt-extended = "^4.6.0"
+passlib = "^1.7.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
