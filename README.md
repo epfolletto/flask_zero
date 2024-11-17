@@ -22,18 +22,26 @@ git clone https://github.com/epfolletto/flask_zero.git
 
 - Instalar as dependências, utilizando [Poetry](https://python-poetry.org/):
   
-```cd flask_zero && poetry install```
+```
+cd flask_zero && poetry install
+```
 
 ## Banco de dados
 - Criar banco de dados no PostgreSQL:
 
-```export DATABASE_URL=postgresql://usuario:senha@localhost:5432/meu_banco```
+```
+export DATABASE_URL=postgresql://usuario:senha@localhost:5432/meu_banco
+```
   
 - Executar as migrações:
   
-```alembic upgrade head```
+```
+alembic upgrade head
+```
 
 ## Rodar o projeto
 - Para iniciar o projeto:
   
-```make run (poetry run flask run)```
+```
+make run (poetry run flask run)
+```
