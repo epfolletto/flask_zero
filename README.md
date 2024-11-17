@@ -16,7 +16,9 @@ Certifique-se de ter os seguintes itens instalados em sua máquina:
 ## Início
 - Clonar o repositório:
   
-```git clone https://github.com/epfolletto/flask_zero.git```
+```
+git clone https://github.com/epfolletto/flask_zero.git
+```
 
 - Instalar as dependências, utilizando [Poetry](https://python-poetry.org/):
   
