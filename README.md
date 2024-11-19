@@ -9,7 +9,6 @@ Repositório de estudos relacionados ao Flask. Tecnologias utilizadas:
 - Validação de dados: Pydantic
 
 ## Pré-requisitos
-Certifique-se de ter os seguintes itens instalados em sua máquina:
 - Python 3.x
 - PostgreSQL
 - Poetry
@@ -44,5 +43,5 @@ alembic upgrade head
 - Para iniciar o projeto:
   
 ```
-make run (poetry run flask run)
+make run
 ```
