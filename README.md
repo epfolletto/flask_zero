@@ -6,6 +6,7 @@ Repositório de estudos relacionados ao Flask. Tecnologias utilizadas:
 - Gerenciamento de versões: Alembic
 - Autenticação/autorização: Flask-JWT-Extended
 - Rotas e módulos: Blueprints
+- Validação de dados: Pydantic
 
 ## Pré-requisitos
 Certifique-se de ter os seguintes itens instalados em sua máquina:

@@ -1,22 +1,25 @@
 from flask import Blueprint, request, jsonify
 from .models import db, User
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
+from .schemas.user import UserCreateModel
+from pydantic import ValidationError
 
 users_bp = Blueprint('users', __name__)
 
 
 @users_bp.route('/create', methods=['POST'])
 def create_user():
-    data = request.json
-    username = data.get('username')
-    password = data.get('password')
+    try:
+        data = UserCreateModel(**request.json)
+    except ValidationError as e:
+        return jsonify({'errors': e.errors()}), 400
 
-    if User.query.filter_by(username=username).first():
+    if User.query.filter_by(username=data.username).first():
         return jsonify({"msg": "Username já está em uso"}), 409
 
     user = User(
-        username=username,
-        password_hash=User.generate_hash(password)
+        username=data.username,
+        password_hash=User.generate_hash(data.password)
     )
     db.session.add(user)
     db.session.commit()
