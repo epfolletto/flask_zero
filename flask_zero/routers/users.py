@@ -1,10 +1,15 @@
 from flask import Blueprint, request, jsonify
-from .models import db, User
+from flask_zero.models import db, User
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
-from .schemas.user import UserCreateModel
+from flask_zero.schemas.user import UserCreateModel
 from pydantic import ValidationError
 
 users_bp = Blueprint('users', __name__)
+
+
+@users_bp.route('/hello', methods=['GET'])
+def hello():
+    return{"msg": "Hello world"}
 
 
 @users_bp.route('/create', methods=['POST'])
@@ -34,7 +39,7 @@ def list_users():
     role = get_jwt().get('role')
 
     if role != 'admin':
-        return jsonify({"msg": "Acess denied!"}), 403
+        return jsonify({"msg": "Access denied!"}), 403
 
     users = User.query.all()
 
