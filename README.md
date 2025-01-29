@@ -26,22 +26,9 @@ git clone https://github.com/epfolletto/flask_zero.git
 cd flask_zero && poetry install
 ```
 
-## Banco de dados
-- Criar banco de dados no PostgreSQL:
-
-```
-export DATABASE_URL=postgresql://usuario:senha@localhost:5432/meu_banco
-```
-  
-- Executar as migrações:
-  
-```
-alembic upgrade head
-```
-
 ## Rodar o projeto
 - Para iniciar o projeto:
   
 ```
-make run
+docker compose up --build
 ```

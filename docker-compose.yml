@@ -5,9 +5,10 @@ services:
     build: .
     entrypoint: ./entrypoint.sh
     ports:
-      - "5001:5000"
+      - "5001:5000" # <porta_host>:<porta_conteiner>
     environment:
-      - DATABASE_URL=postgresql+psycopg://postgres:676dac07@db:5432/flask_zero_db
+      # - DATABASE_URL=postgresql+psycopg://postgres:676dac07@db:5432/flask_zero_db
+      - DATABASE_URL=${DATABASE_URI}
     depends_on:
       - db
   db:
@@ -18,7 +19,7 @@ services:
       POSTGRES_PASSWORD: 676dac07
       POSTGRES_DB: flask_zero_db
     ports:
-      - "5432:5432"
+      - "5434:5432" # <porta_host>:<porta_conteiner>
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

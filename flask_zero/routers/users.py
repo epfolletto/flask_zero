@@ -9,7 +9,7 @@ users_bp = Blueprint('users', __name__)
 
 @users_bp.route('/hello', methods=['GET'])
 def hello():
-    return{"msg": "Hello world"}
+    return{"msg": "Hello world3"}
 
 
 @users_bp.route('/create', methods=['POST'])
