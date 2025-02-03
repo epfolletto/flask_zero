@@ -6,6 +6,7 @@ wip.md
 slides/brutos/*.html
 *.db
 *.bd
+.env
 
 database.db
 
