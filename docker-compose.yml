@@ -1,5 +1,6 @@
 services:
   flask_app:
+    image: epfolletto/img_dockerfile_flask_zero
     container_name: flask_app
     build: .
     entrypoint: ./entrypoint.sh
@@ -9,7 +10,6 @@ services:
       - DATABASE_URL=${SQLALCHEMY_DATABASE_URI}
     depends_on:
       - db
-    image: epfolletto/flask_zero-flask_app:v2
   db:
     container_name: db
     image: postgres:15
